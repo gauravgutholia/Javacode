@@ -1,0 +1,25 @@
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        String sc = "Hey my name is Gaurav";
+        int vowelcount = 0;
+        int consonentcount = 0;
+        String noSpacesStr = sc.replaceAll("\\s", "");
+        String upsc = noSpacesStr.toUpperCase();
+        char[] charArray = upsc.toCharArray();
+        for(int i=0; i< charArray.length; i++)
+        {
+            if (charArray[i] == 'A' || charArray[i] == 'E' || charArray[i] == 'I' || charArray[i] == 'O' || charArray[i] == 'U')
+            {
+                vowelcount ++;
+            }
+            else
+            {
+                consonentcount++;
+            }
+        }
+        System.out.println(vowelcount);
+         System.out.println(consonentcount);
+    }
+}
