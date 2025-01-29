@@ -1,0 +1,24 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {5,4,3,7,8,2};
+        int [] arr2 = {3,4,5};
+        int length1 = arr.length;
+        int length2 = arr2.length;
+        int [] merge = new int[length1+length2];
+        for(int i=0; i<length1; i++)
+        {
+            merge[i]= arr[i];
+        }
+        for(int i=0; i<length2; i++)
+        {
+            merge[length1+i]= arr2[i];
+        }
+        Arrays.sort(merge);
+        System.out.println(Arrays.toString(merge));
+        
+    }
+}
