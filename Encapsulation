@@ -1,0 +1,74 @@
+Encapsulation is about bundling the data (attributes) and methods (functions) that operate on the data into a single unit, typically a class. It also involves restricting access to some of the object's components, which is usually achieved through access modifiers like private, protected, and public.
+
+Key Points:
+Data Hiding: Encapsulation hides the internal state of an object from the outside world. Only the object's methods can modify the state.
+
+Access Control: It provides controlled access to the data through public methods (getters and setters).
+
+Implementation: Encapsulation is implemented using access modifiers to restrict access to the object's attributes and methods.
+
+
+Example =
+
+
+public class PersonDemo {
+    public static void main(String[] args) {
+        // Creating an object of the Person class
+        Person person = new Person("Alice", 30);
+        
+        // Accessing and modifying the attributes using getters and setters
+        System.out.println("Name: " + person.getName());
+        System.out.println("Age: " + person.getAge());
+
+        person.setName("Bob");
+        person.setAge(35);
+
+        System.out.println("Updated Name: " + person.getName());
+        System.out.println("Updated Age: " + person.getAge());
+
+        // Displaying person's info
+        person.displayInfo();
+    }
+}
+
+class Person {
+    // Private attributes
+    private String name;
+    private int age;
+
+    // Constructor
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Getter method for name
+    public String getName() {
+        return name;
+    }
+
+    // Setter method for name
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Getter method for age
+    public int getAge() {
+        return age;
+    }
+
+    // Setter method for age
+    public void setAge(int age) {
+        if(age > 0) { // Additional logic to ensure valid age
+            this.age = age;
+        } else {
+            System.out.println("Age must be positive.");
+        }
+    }
+
+    // Method to display person's info
+    public void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
